@@ -25,8 +25,12 @@ namespace NEUSecretary
         public MainPage()
         {
             this.InitializeComponent();
+            var appTitleBar = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TitleBar;
+            var coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            appTitleBar.ButtonBackgroundColor = Windows.UI.Colors.Transparent;
             MyFrame.Navigate(typeof(Homepage));
-            TitleTextBlock.Text = "主页";
+            TitleTextBlock.Text = "NEUSecretary";
             Homepage.IsSelected = true;
         }
 
